@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,7 +18,10 @@ class PostType extends AbstractType
             ->add('author', null, [
                 'label' => 'Votre nom :'
             ])
-            ->add('receiver')
+            ->add('receiver', null, [
+                'label' => 'Choisissez un destinataire:',
+                'placeholder' => 'Laissez vide si pas de destinataire en particulier',
+            ])
             ->add('content', TextareaType::class, [
                 'label' => 'Contenu de votre message :'
             ])
