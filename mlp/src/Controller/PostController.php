@@ -17,29 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PostController extends AbstractController
 {
-    /**
-     * @Route("/", name="_browse")
-     */
-    public function browse(PostRepository $postRepository): Response
-    {
-        // L'idée c'est d'afficher que le posts généraux, mias je n'ai pas encore de relations.
-        // Il faut penser à la pagination aussi.
-        // $posts = $postRepository->findBy(
-        //     A completer
-        //     ['' => '']
-        
-        // );
-
-        $posts = $postRepository->findAll();
-
-        dd($posts);
-
-        return $this->render('post/browse.html.twig', [
-            'posts' => $posts,
-        ]);
-    }
-
-
+    
     /**
      * @Route("/add", name="_add")
      */
@@ -63,7 +41,7 @@ class PostController extends AbstractController
             
             $this->addFlash('success', 'L\'évènement a été créée');
             
-            return $this->redirectToRoute('post_browse');
+            return $this->redirectToRoute('main_home');
 
 
         }

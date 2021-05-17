@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MerciLesProfs !{% endblock %}
+
+{% block main %}
+
+
+    {% for post in posts %}
+
+        <div>
+            <p>
+                Ecrit par: {{post.author}}
+            </p>
+            <p>
+                {{post.content}}
+            </p>
+        </div>
+        
+    {% endfor %}
+
+    <div class="paging d-flex justify-content-center">
+        {{ knp_pagination_render(posts) }}
+    </div>
+    
+{% endblock %}
