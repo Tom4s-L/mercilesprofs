@@ -17,6 +17,7 @@ class PostType extends AbstractType
             ->add('author', null, [
                 'label' => 'Votre nom :'
             ])
+            ->add('receiver')
             ->add('content', TextareaType::class, [
                 'label' => 'Contenu de votre message :'
             ])
