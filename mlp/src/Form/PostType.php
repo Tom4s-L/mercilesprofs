@@ -21,7 +21,8 @@ class PostType extends AbstractType
                 'label' => 'Contenu de votre message :'
             ])
             ->add('submit', SubmitType::class, [
-                'attr' => ['class' => 'btn btn-success'] 
+                'label' => 'Enregistrer',
+                'attr' => ['class' => 'btn btn-success'], 
             ]
             )
         ;
