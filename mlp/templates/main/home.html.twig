@@ -3,14 +3,16 @@
 {% block title %}MerciLesProfs !{% endblock %}
 
 {% block main %}
+<div id="welcome">
 
+<div id="text-welcome">
+<h1 class="font-jedi green text-5xl">Merci les profs</h1>
 
+</div>
 
+</div>
 
-
-
-
-
+{% if posts is not empty %}
 
     {% for post in posts %}
 
@@ -24,6 +26,12 @@
         </div>
         
     {% endfor %}
+
+{% else %}
+
+    <p>Pas de posts pour l'instant, <a href="{{ path('post_add') }}">créez en un</a></p>
+
+{% endif %}
 
     <div class="paging d-flex justify-content-center">
         {{ knp_pagination_render(posts, 'paging.html.twig') }}

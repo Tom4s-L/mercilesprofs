@@ -19,3 +19,18 @@
     background-size: cover ;
     height: 100vh;
 }
+
+#welcome{
+    background-image: url("../img/quigon.jpg");
+    background-size: auto 100% ;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: right;
+    height: 90vh; 
+}
+
+#text-welcome{
+    width: 50%;
+    padding-top:5rem;
+    text-align: center;
+}
