@@ -20,10 +20,19 @@ class MainController extends AbstractController
      */
     public function home(Request $request, PaginatorInterface $paginator, PostRepository $postRepository): Response
     {
+        if ($this->getUser()) {
 
-        $posts = $postRepository->findBy([
-            'receiver' => null
-        ]);
+            $posts = $postRepository->findBy([
+                'receiver' => $this->getUser()
+            ]);
+
+        } else {
+
+            $posts = $postRepository->findBy([
+                'receiver' => null
+            ]);
+
+        }
 
         $posts = $paginator->paginate(
             $posts,
@@ -35,5 +44,4 @@ class MainController extends AbstractController
         ]);
     }
 
-    
 }
