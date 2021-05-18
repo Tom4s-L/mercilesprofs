@@ -1,0 +1,21 @@
+@font-face{
+    font-family:'star-jedi';
+    src:url("../fonts/Starjout.ttf") format('truetype');
+}
+
+.font-jedi{
+    font-family: 'star-jedi';
+}
+.green{
+    color: #33a02b;
+}
+
+.bg-green{
+    background-color:#33a02b ;
+}
+
+.bg-star{
+    background-image: url("../img/bg-star.jpg");
+    background-size: cover ;
+    height: 100vh;
+}
