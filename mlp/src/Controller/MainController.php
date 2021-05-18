@@ -21,7 +21,9 @@ class MainController extends AbstractController
     public function home(Request $request, PaginatorInterface $paginator, PostRepository $postRepository): Response
     {
 
-        $posts = $postRepository->findAll();
+        $posts = $postRepository->findBy([
+            'receiver' => null
+        ]);
 
         $posts = $paginator->paginate(
             $posts,
