@@ -1,8 +1,12 @@
 @font-face{
-    font-family:'star-jedi';
+    font-family: 'star-jedi';
     src:url("../fonts/Starjout.ttf") format('truetype');
 }
 
+body {
+    font-family: 'Days One', sans-serif;
+ 
+}
 .font-jedi{
     font-family: 'star-jedi';
 }
@@ -20,17 +24,16 @@
     height: 100vh;
 }
 
-#welcome{
-    background-image: url("../img/quigon.jpg");
-    background-size: auto 100% ;
-    background-repeat: no-repeat;
-    background-color: black;
-    background-position: right;
-    height: 90vh; 
-}
+#welcome-left{
 
-#text-welcome{
-    width: 50%;
-    padding-top:5rem;
     text-align: center;
 }
+
+#welcome-right{
+    background-image: url("../img/quigon.jpg");
+    background-size: cover ;
+}
+.text-green{
+    color:#33a02b;
+}
+
