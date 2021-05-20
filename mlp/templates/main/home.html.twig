@@ -4,55 +4,52 @@
 {% endblock %}
 
 {% block main %}
-	<main class="h-screen flex flex-col sm:flex-row w-screen bg-black">
-		
-			{#-- Partie de gauche--#}
-			<div id="welcome-left" class="w-full sm:w-1/2 flex flex-col justify-self-stretch justify-center ">
-				<h1 class="font-jedi green text-3xl md:text-5xl">Merci les profs</h1>
-				<h2 class="text-white py-8 md:text-base text-xs pb-8 md:pb-0">Merci à tous les profs qui nous on permis de devenir de vrais jedis du code !</h2>
-				<a href="{{ path('post_add')}}" class="text-green italic hover:underline text-sm pt-4">Ecrire un message</a>
-			</div>
-
-			{#-- Partie de droite--#}
-			<div id="welcome-right" class="w-full sm:w-1/2 overflow-hidden">
-				<div id="posts" class="pt-20 px-12">
-
-					<h2 class="text-3xl font-jedi text-center py-8 ">Nos petits mots</h2>
-
-					{% if posts is not empty %}
-
-						{% for post in posts %}
-
-							<div class="bg-gray-100 bg-opacity-20 py-4 px-4 rounded-xl mb-4">
-
-								<p>
-									{{post.content}}
-								</p>
-								<p class="text-right">
-								<span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green bg-black uppercase last:mr-0 mr-1">
-  									{{post.author}}
-								</span>
-									
-								</p>
-							</div>
-
-						{% endfor %}
-
-					{% else %}
-
-						<p>Pas de posts pour l'instant,
-							<a href="{{ path('post_add') }}">créez en un</a>
-						</p>
 	
-					{% endif %}
+	{#-- Partie de gauche / haute --#}
+	<div id="welcome-left" class="fixed w-screen bg-black px-3 py-3">
+		<h1 class="font-jedi green text-3xl md:text-5xl">Merci les profs</h1>
+		<h2 class="text-white py-8 md:text-base text-xs pb-8 md:pb-0">Merci à tous les profs qui nous on permis de devenir de vrais jedis du code !</h2>
+		<a href="{{ path('post_add')}}" class="text-green italic hover:underline text-sm pt-4">Ecrire un message</a>
+	</div>
 
-				</div>
-				<div class="paging d-flex justify-content-center">
-					{{ knp_pagination_render(posts, 'paging.html.twig') }}
-				</div>
-			</div>
+	{#-- Partie de droite / basse --#}
+	<div id="welcome-right" class="flex-grow pt-36">
 
-		
+		<div id="posts" class="px-12 overflow-auto">
 
-	</main>
+			<h2 class="text-3xl font-jedi text-center py-8 ">Nos petits mots</h2>
+
+			{% if posts is not empty %}
+
+				{% for post in posts %}
+
+					<div class="bg-gray-100 bg-opacity-20 rounded-xl mb-5 px-3 py-3 ">
+						<p>
+							{{post.content}}
+						</p>
+
+						<p class="text-right">
+							<span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green bg-black uppercase last:mr-0 mr-1">
+								{{post.author}}
+							</span>	
+						</p>
+					</div>
+
+				{% endfor %}
+
+			{% else %}
+
+				<p>Pas de posts pour l'instant,
+					<a href="{{ path('post_add') }}">créez en un</a>
+				</p>
+
+			{% endif %}
+
+		</div>
+		<div class="text-white flex justify-center">
+			{{ knp_pagination_render(posts) }}
+		</div>
+	</div>
+
+	
 {% endblock %}

@@ -5,11 +5,12 @@
 
 body {
     font-family: 'Days One', sans-serif;
- 
 }
+
 .font-jedi{
     font-family: 'star-jedi';
 }
+
 .green{
     color: #33a02b;
 }
@@ -25,7 +26,6 @@ body {
 }
 
 #welcome-left{
-
     text-align: center;
 }
 
