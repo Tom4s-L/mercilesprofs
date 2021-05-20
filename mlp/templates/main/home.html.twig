@@ -6,16 +6,16 @@
 {% block main %}
 	
 	{#-- Partie de gauche / haute --#}
-	<div id="welcome-left" class="fixed w-screen bg-black px-3 py-3">
+	<div id="welcome-left" class="w-full bg-black pt-14 py-3 lg:w-1/2 lg:h-screen lg:flex lg:flex-col lg:justify-center lg:items-center">
 		<h1 class="font-jedi green text-3xl md:text-5xl">Merci les profs</h1>
 		<h2 class="text-white py-8 md:text-base text-xs pb-8 md:pb-0">Merci à tous les profs qui nous on permis de devenir de vrais jedis du code !</h2>
 		<a href="{{ path('post_add')}}" class="text-green italic hover:underline text-sm pt-4">Ecrire un message</a>
 	</div>
 
 	{#-- Partie de droite / basse --#}
-	<div id="welcome-right" class="flex-grow pt-36">
+	<div id="welcome-right" class="flex-grow lg:w-1/2 lg:h-screen lg:pt-14 lg:overflow-auto">
 
-		<div id="posts" class="px-12 overflow-auto">
+		<div id="posts" class="px-12 ">
 
 			<h2 class="text-3xl font-jedi text-center py-8 ">Nos petits mots</h2>
 
