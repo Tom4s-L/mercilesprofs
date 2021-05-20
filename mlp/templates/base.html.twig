@@ -17,10 +17,31 @@
 
           <div class="min-h-screen">
 
-            <header class="fixed w-screen h-14 text-center flex justify-end place-items-center bg-gray-900 body-font text-gray-600">
-              <a class="h-8 py-1 px-3 mr-2 flex justify-center place-items-center bg-green text-white hover:bg-gray-200 rounded text-base " href="{{ path('app_login') }}">Se connecter</a>
-            </header>
-  
+            <header class="fixed w-screen h-14 text-center flex justify-between place-items-center bg-gray-900 body-font text-gray-600">
+
+            <div class="ml-4">
+              <a href="{{path('main_home')}}" class="flex flex-row justify-center items-center">
+                <img src="{{asset('assets/img/dark.svg')}}" alt="Icone DarkVador" class="w-10">
+                <span class="text-green ml-2 hover:underline">Retour du Jedi</span>
+                <span class="text-xs italic text-gray-500 ml-2">{ Retour à l'accueil pour les newbies }</span>
+              </a>           
+            </div>
+
+              {% if app.user %}
+              
+                <a class="h-8 py-1 px-3 mr-4 flex justify-center place-items-center bg-green text-white hover:bg-gray-200 hover:text-black rounded text-base btn " href="{{ path('app_logout') }}">Se déconnecter</a>  
+
+              {% else %}
+                
+                {% if app.request.get('_route') != 'app_login' %}
+                
+                  <a class="h-8 py-1 px-3 mr-4 flex justify-center place-items-center bg-green text-white hover:bg-gray-200 hover:text-black rounded text-base btn " href="{{ path('app_login') }}">Se connecter</a>
+                
+                {% endif %}
+              
+              {% endif %}
+            
+            </header>  
             <main class="h-screen flex flex-col lg:flex-row">
               {% block main %}
               {% endblock %}
