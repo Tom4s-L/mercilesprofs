@@ -36,7 +36,7 @@ class MainController extends AbstractController
 
         $posts = $paginator->paginate(
             $posts,
-            $request->query->getInt('page', 1) , 3
+            $request->query->getInt('page', 1) , 10
         );
 
         return $this->render('main/home.html.twig', [

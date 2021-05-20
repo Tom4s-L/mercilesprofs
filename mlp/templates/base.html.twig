@@ -3,37 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}MerciLesProfs !{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             <link href="https://unpkg.com/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
             <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
             <link rel="preconnect" href="https://fonts.gstatic.com">
             <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
-            
         {% endblock %}
 
     </head>
     <body>
         {% block body %}
 
-          <header class="text-gray-600 body-font bg-gray-900 fixed w-screen">
-            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row justify-end">
-              <button class="inline-flex text-white items-center bg-green border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Se connecter
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </button>
-            </div>
-          </header>
+          <div class="min-h-screen">
 
-            {% block main %}
-            {% endblock %}
-
-            <footer>
-            </footer>
+            <header class="fixed w-screen h-14 text-center flex justify-end place-items-center bg-gray-900 body-font text-gray-600">
+              <a class="h-8 py-1 px-3 mr-2 flex justify-center place-items-center bg-green text-white hover:bg-gray-200 rounded text-base " href="{{ path('app_login') }}">Se connecter</a>
+            </header>
   
+            <main class="h-screen flex flex-col lg:flex-row">
+              {% block main %}
+              {% endblock %}
+            </main>
+
+          </div>
+
         {% endblock %}
     </body>
 </html>

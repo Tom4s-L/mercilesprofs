@@ -1,41 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter un message
+{% block title %}
+  Ajouter un message
 {% endblock %}
 
 {% block main %}
 
-<main class="text-gray-600 body-font relative bg-star">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col text-center w-full mb-12">
-      <h1 class="sm:text-5xl text-2xl font-medium title-font mb-4 green font-jedi">Envoyer un message</h1>
-    </div>
-	{{ form_start(form)}}
-    <div class="lg:w-1/2 md:w-2/3 mx-auto">
-      <div class="flex flex-wrap -m-2">
-        <div class="p-2 w-1/2">
-          <div class="relative">
-            	{{ form_label(form.author) }}
-				{{ form_widget(form.author) }}
-          </div>
+<div class="w-full bg-star mt-14 mx-auto py-24 flex flex-col justify-center items-center "> 
+
+  <h1 class="md:text-4xl text-3xl xl:text-5xl font-medium title-font mb-4 text-center green font-jedi">Envoyer un message</h1>
+
+  <div class="w-10/12 md:w-8/12 lg:w-1/2 mx-auto">
+    {{ form_start(form)}}
+  
+      <div class="lg:flex lg:flex-row justify-between mt-8">
+  
+        <div class="flex flex-col lg:w-5/12">
+          {{ form_label(form.author) }}
+          {{ form_widget(form.author) }}
         </div>
-        <div class="p-2 w-1/2">
-          <div class="relative">
-            	{{ form_label(form.receiver) }}
-				{{ form_widget(form.receiver) }}
-          </div>
+    
+        <div class="flex flex-col lg:w-5/12">
+          {{ form_label(form.receiver) }}
+          {{ form_widget(form.receiver) }}
         </div>
-        <div class="p-2 w-full">
-          <div class="relative">
-  			{{ form_label(form.content) }}
-			{{ form_widget(form.content)}}
-        </div>
-        <div class="p-2 w-full">
-          {{ form_widget(form.submit)}}
-        </div>
+        
       </div>
-    </div>
-	{{ form_end(form)}}
+  
+      {{ form_label(form.content) }}
+      {{ form_widget(form.content)}}
+  
+      {{ form_widget(form.submit)}}
+  
+    {{ form_end(form)}}
   </div>
-</main>
+  
+</div>
 {% endblock %}
