@@ -37,3 +37,7 @@ body {
     color:#33a02b;
 }
 
+.btn:active {
+    transform: scale(0.8);
+}
+

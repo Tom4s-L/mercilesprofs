@@ -9,7 +9,7 @@
 	<div id="welcome-left" class="w-full bg-black pt-14 py-3 lg:w-1/2 lg:h-screen lg:flex lg:flex-col lg:justify-center lg:items-center">
 		<h1 class="font-jedi green text-3xl md:text-5xl">Merci les profs</h1>
 		<h2 class="text-white py-8 md:text-base text-xs pb-8 md:pb-0">Merci à tous les profs qui nous on permis de devenir de vrais jedis du code !</h2>
-		<a href="{{ path('post_add')}}" class="text-green italic hover:underline text-sm pt-4">Ecrire un message</a>
+		<a href="{{ path('post_add')}}" class="btn text-green uppercase text-sm tracking-widest hover:underline text-sm pt-4">{ Ecrire un message }</a>
 	</div>
 
 	{#-- Partie de droite / basse --#}
@@ -40,7 +40,7 @@
 			{% else %}
 
 				<p>Pas de posts pour l'instant,
-					<a href="{{ path('post_add') }}">créez en un</a>
+					<a href="{{ path('post_add') }}">Créez en un</a>
 				</p>
 
 			{% endif %}
