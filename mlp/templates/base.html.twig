@@ -29,13 +29,13 @@
 
               {% if app.user %}
               
-                <a class="h-8 py-1 px-3 mr-4 flex justify-center place-items-center bg-green text-white hover:bg-gray-200 hover:text-black rounded text-base btn " href="{{ path('app_logout') }}">Se déconnecter</a>  
+                <a class="h-8 py-1 px-3 mr-4 flex justify-center place-items-center bg-green text-white hover:bg-gray-200 hover:text-black rounded text-base btn " href="{{ path('app_logout') }}">Déconnexion</a>  
 
               {% else %}
                 
                 {% if app.request.get('_route') != 'app_login' %}
                 
-                  <a class="h-8 py-1 px-3 mr-4 flex justify-center place-items-center bg-green text-white hover:bg-gray-200 hover:text-black rounded text-base btn " href="{{ path('app_login') }}">Se connecter</a>
+                  <a class="h-8 py-1 px-3 mr-4 flex justify-center place-items-center bg-green text-white hover:bg-gray-200 hover:text-black rounded text-base btn " href="{{ path('app_login') }}">Connexion</a>
                 
                 {% endif %}
               
