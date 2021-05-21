@@ -51,6 +51,11 @@ class User implements UserInterface
      */
     private $lastName;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $giftCard;
+
 
     public function __construct()
     {
@@ -193,6 +198,18 @@ class User implements UserInterface
     public function setLastName(string $lastName): self
     {
         $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function getGiftCard(): ?string
+    {
+        return $this->giftCard;
+    }
+
+    public function setGiftCard(?string $giftCard): self
+    {
+        $this->giftCard = $giftCard;
 
         return $this;
     }

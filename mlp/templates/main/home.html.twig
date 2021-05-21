@@ -14,14 +14,18 @@
 			<h1 class="font-jedi green text-3xl md:text-5xl">Merci les profs</h1>
 		{% endif %}
 		
-		
-
-		<h2 class="text-white py-8 md:text-base text-xs pb-8 md:pb-0">De la part de tous les Qui-Gon</h2>
-		<h3 class="text-white py-8 md:text-base text-xs pb-8 md:pb-0">Grâce à vous on a pu devenir de vrais jedis du code !</h3>
-
 		{% if app.user %}
-
+			<p class="green py-8 md:text-base text-xs pb-8 md:pb-0">Ton code carte cadeau FNAC: </p>
+			<p>
+				{% if app.user.giftcard %}
+					<p class="green font-bold text-xl">
+						{{ app.user.giftcard }}
+					</p>
+				{% endif %}
+			</p>
 		{% else %}
+			<h2 class="text-white py-8 md:text-base text-xs pb-8 md:pb-0">De la part de tous les Qui-Gon</h2>
+			<h3 class="text-white py-8 md:text-base text-xs pb-8 md:pb-0">Grâce à vous on a pu devenir de vrais jedis du code !</h3>
 			<a href="{{ path('post_add')}}" class="btn text-green uppercase text-sm tracking-widest hover:underline text-sm pt-4">{ Ecrire un message }</a>		
 		{% endif %}
 		
