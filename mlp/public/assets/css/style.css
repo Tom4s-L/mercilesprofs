@@ -41,3 +41,15 @@ body {
     transform: scale(0.8);
 }
 
+/* Pour corriger les puces qui se desactivent à cause du reset.css de Tailwind */
+
+ul>li {
+    list-style-type: disc;
+    margin-left: 1em;
+}
+
+ol>li {
+    list-style-type: decimal;
+    margin-left: 1em;
+}
+

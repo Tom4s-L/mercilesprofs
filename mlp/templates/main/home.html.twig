@@ -9,7 +9,13 @@
 	<div id="welcome-left" class="w-full bg-black pt-14 py-3 lg:w-1/2 lg:h-screen lg:flex lg:flex-col lg:justify-center lg:items-center">
 		<h1 class="font-jedi green text-3xl md:text-5xl">Merci les profs</h1>
 		<h2 class="text-white py-8 md:text-base text-xs pb-8 md:pb-0">Merci à tous les profs qui nous on permis de devenir de vrais jedis du code !</h2>
-		<a href="{{ path('post_add')}}" class="btn text-green uppercase text-sm tracking-widest hover:underline text-sm pt-4">{ Ecrire un message }</a>
+
+		{% if app.user %}
+
+		{% else %}
+			<a href="{{ path('post_add')}}" class="btn text-green uppercase text-sm tracking-widest hover:underline text-sm pt-4">{ Ecrire un message }</a>		
+		{% endif %}
+		
 	</div>
 
 	{#-- Partie de droite / basse --#}
@@ -23,13 +29,13 @@
 
 				{% for post in posts %}
 
-					<div class="bg-gray-100 bg-opacity-20 rounded-xl mb-5 px-3 py-3 ">
+					<div class="bg-gray-100 bg-opacity-20 rounded-xl mb-5 px-3 py-3 break-all ">
 						<p>
-							{{post.content}}
+							{{post.content|raw}}
 						</p>
 
 						<p class="text-right">
-							<span class="text-center text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green bg-black uppercase mt-4 ">
+							<span class="text-center text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green bg-black uppercase mt-4">
 								{{post.author}}
 							</span>	
 						</p>
