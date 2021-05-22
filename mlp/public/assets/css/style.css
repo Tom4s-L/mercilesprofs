@@ -29,6 +29,10 @@ body {
     text-align: center;
 }
 
+.gift-card {
+    border-color:#33a02b;
+}
+
 #welcome-right{
     background-image: url("../img/quigon.jpg");
     background-size: cover ;

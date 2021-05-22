@@ -10,11 +10,11 @@
 
         <form method="post" class="w-10/12 md:w-8/12 lg:w-1/2 mx-auto flex flex-col self-center">
             {% if error %}
-                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                <div class="alert alert-danger text-white">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
         
             {% if app.user %}
-                <div class="mb-3">
+                <div class="mb-3 text-white">
                     Vous etes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
                 </div>
             {% endif %}
