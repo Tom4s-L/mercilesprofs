@@ -67,7 +67,7 @@
 
 				{% for post in posts %}
 
-					<div class="bg-gray-100 bg-opacity-20 rounded-xl mb-5 px-3 py-3 break-all ">
+					<div class="bg-gray-100 bg-opacity-20 rounded-xl mb-5 px-3 py-3 break-normal ">
 						<p>
 							{{post.content|raw}}
 						</p>
@@ -100,7 +100,7 @@
 			{% endif %}
 
 		</div>
-		<div class="text-white flex justify-center">
+		<div class="text-white flex justify-center mb-6">
 			{{ knp_pagination_render(posts) }}
 		</div>
 	</div>
