@@ -33,13 +33,13 @@
 								Bon cadeau
 							</h2>
 							<p class="py-6 text-2xl">
-								60€
+								{{app.user.giftcardamount}}€
 							</p>
 							<p class="italic">
 								Carte FNAC
 							</p>
 							<p>
-								{{ app.user.giftcard }}
+								<a href="{{ app.user.giftcard }}" class="hover:underline btn">Récuperer ma carte cadeau</a>
 							</p>
 						</div>
 					</div>

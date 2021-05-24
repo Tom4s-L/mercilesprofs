@@ -51,6 +51,11 @@ class User implements UserInterface
      */
     private $giftCard;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $giftCardAmount;
+
 
     public function __construct()
     {
@@ -193,6 +198,18 @@ class User implements UserInterface
     public function setGiftCard(?string $giftCard): self
     {
         $this->giftCard = $giftCard;
+
+        return $this;
+    }
+
+    public function getGiftCardAmount(): ?string
+    {
+        return $this->giftCardAmount;
+    }
+
+    public function setGiftCardAmount(string $giftCardAmount): self
+    {
+        $this->giftCardAmount = $giftCardAmount;
 
         return $this;
     }
