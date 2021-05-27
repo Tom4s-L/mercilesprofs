@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 @font-face{
     font-family: 'star-jedi';
     src:url("../fonts/Starjout.ttf") format('truetype');
@@ -20,7 +24,7 @@ body {
 }
 
 .bg-star{
-    background-image: url("../img/bg-star.jpg");
+    background-image: url("../images/bg-star.jpg");
     background-size: cover ;
     height: 100vh;
 }
@@ -34,7 +38,7 @@ body {
 }
 
 #welcome-right{
-    background-image: url("../img/quigon.jpg");
+    background-image: url("../images/quigon.jpg");
     background-size: cover ;
 }
 .text-green{
