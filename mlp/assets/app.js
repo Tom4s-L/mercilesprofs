@@ -20,6 +20,8 @@ const app = {
         if (document.querySelector('.link-card')) {
             document.querySelector('.link-card').addEventListener("click", app.giftCardToggleHandler);
         }
+
+        document.querySelector('.print-btn').addEventListener("click", app.printToPdf);
         
     },
 
@@ -30,6 +32,17 @@ const app = {
         let giftCardElement = document.querySelector('.gift-card');
         giftCardElement.classList.toggle('invisible');
 
+    },
+
+    printToPdf : function(event) {
+        event.preventDefault();
+        
+        var printContents = document.querySelector('#posts').innerHTML;    
+        var originalContents = document.body.innerHTML;  
+            
+        document.body.innerHTML = printContents;     
+        window.print();     
+        document.body.innerHTML = originalContents;
     },
 
 }
