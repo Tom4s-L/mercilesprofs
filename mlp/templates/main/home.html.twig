@@ -7,7 +7,7 @@
 	
 	{#-- Partie de gauche / haute --#}
 	<div id="welcome-left" class="w-full bg-black pt-14 py-3 lg:w-1/2 lg:h-screen lg:flex lg:flex-col lg:justify-center lg:items-center">
-
+	
 		{% if app.user %}
 			<h1 class="font-jedi green text-3xl md:text-5xl">Merci {{ app.user.firstname }}</h1>
 		{% else %}
@@ -53,7 +53,12 @@
 			<h3 class="text-white py-8 md:text-base text-xs pb-8 md:pb-0">Grâce à vous on a pu devenir de vrais jedis du code !</h3>
 			<a href="{{ path('post_add')}}" class="btn text-green uppercase text-sm tracking-widest hover:underline text-sm pt-4">{ Ecrire un message }</a>		
 		{% endif %}
-		
+		 <audio
+        controls
+        src="{{asset("build/audio/desbisous.mp3")}}">
+            Your browser does not support the
+            <code>audio</code> element.
+    	</audio>
 	</div>
 
 	{#-- Partie de droite / basse --#}

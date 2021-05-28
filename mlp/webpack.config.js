@@ -13,6 +13,19 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
+
+    .copyFiles({
+         from: './assets/audio',
+
+         // optional target path, relative to the output dir
+         //to: 'audio/[path][name].[ext]',
+
+         // if versioning is enabled, add the file hash too
+        to: 'audio/[path][name].[hash:8].[ext]',
+
+         // only copy files matching this pattern
+         pattern: /\.(mp3)$/
+     })
     // public path used by the web server to access the output path
     .setPublicPath('/build')
     // only needed for CDN's or sub-directory deploy
